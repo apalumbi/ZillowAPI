@@ -1,0 +1,68 @@
+﻿<Zestimate:zestimate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:Zestimate="http://www.zillow.com/static/xsd/Zestimate.xsd"
+                     xsi:schemaLocation="http://www.zillow.com/static/xsd/Zestimate.xsd http://www.zillowstatic.com/vstatic/6ec2563/static/xsd/Zestimate.xsd">
+  <request>
+    <zpid>9872758</zpid>
+  </request>
+  <message>
+    <text>Request successfully processed</text>
+    <code>0</code>
+  </message>
+  <response>
+    <zpid>9872758</zpid>
+    <links>
+      <homedetails>http://www.zillow.com/homedetails/527-Stanbridge-St-Norristown-PA-19401/9872758_zpid/</homedetails>
+      <graphsanddata>http://www.zillow.com/homedetails/527-Stanbridge-St-Norristown-PA-19401/9872758_zpid/#charts-and-data</graphsanddata>
+      <mapthishome>http://www.zillow.com/homes/9872758_zpid/</mapthishome>
+      <comparables>http://www.zillow.com/homes/comps/9872758_zpid/</comparables>
+    </links>
+    <address>
+      <street>527 Stanbridge St</street>
+      <zipcode>19401</zipcode>
+      <city>Norristown</city>
+      <state>PA</state>
+      <latitude></latitude>
+      <longitude></longitude>
+    </address>
+    <zestimate>
+      <amount currency="USD">152379</amount>
+      <last-updated>09/07/2014</last-updated>
+      <oneWeekChange deprecated="true"></oneWeekChange>
+      <valueChange duration="30" currency="USD">8950</valueChange>
+      <valuationRange>
+        <low currency="USD">144760</low>
+        <high currency="USD">159998</high>
+      </valuationRange>
+      <percentile>59</percentile>
+    </zestimate>
+    <rentzestimate>
+      <amount currency="USD">1444</amount>
+      <last-updated>09/08/2014</last-updated>
+      <oneWeekChange deprecated="true"></oneWeekChange>
+      <valueChange duration="30" currency="USD">-19</valueChange>
+      <valuationRange>
+        <low currency="USD">1040</low>
+        <high currency="USD">1906</high>
+      </valuationRange>
+    </rentzestimate>
+    <localRealEstate>
+      <region id="40036" type="city" name="Norristown">
+        <zindexValue>120,400</zindexValue>
+        <links>
+          <overview>http://www.zillow.com/local-info/PA-Norristown/r_40036/</overview>
+            <forSaleByOwner>http://www.zillow.com/norristown-pa/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/norristown-pa/</forSale>
+            </links>
+      </region>
+    </localRealEstate>
+    <regions>
+      <zipcode-id>65904</zipcode-id>
+      <city-id>40036</city-id>
+      <county-id>2981</county-id>
+      <state-id>47</state-id>
+    </regions>
+  </response>
+</Zestimate:zestimate>
+<!-- H:002  T:6ms  S:1133  R:Wed Sep 10 07:48:49 PDT 2014  B:4.0.3671-master.d70
+9ee0-LIVE-19dce00-20140908.190327.d709ee0c924d9b5cc9dbf8161c56175ecf564344.20140
+908122033398-origin/master -->

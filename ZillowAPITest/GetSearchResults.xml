@@ -1,0 +1,58 @@
+﻿<SearchResults:searchresults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                             xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/6ec2563/static/xsd/SearchResults.xsd" 
+                             xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
+  <request>
+    <address>1418 Ashton Road</address>
+    <citystatezip>19083</citystatezip>
+  </request>
+  <message>
+    <text>Request successfully processed</text>
+    <code>0</code>
+  </message>
+  <response>
+    <results>
+      <result>
+        <zpid>9369328</zpid>
+        <links>
+          <homedetails>http://www.zillow.com/homedetails/1418-Ashton-Rd-Havertown-PA-19083/9369328_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/1418-Ashton-Rd-Havertown-PA-19083/9369328_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/9369328_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/9369328_zpid/</comparables>
+        </links>
+        <address>
+          <street>1418 Ashton Rd</street>
+          <zipcode>19083</zipcode>
+          <city>Havertown</city>
+          <state>PA</state>
+          <latitude>39.978334</latitude>
+          <longitude>-75.323218</longitude>
+        </address>
+        <zestimate>
+          <amount currency="USD">311013</amount>
+          <last-updated>09/07/2014</last-updated>
+          <oneWeekChange deprecated="true"></oneWeekChange>
+          <valueChange duration="30" currency="USD">9247</valueChange>
+          <valuationRange>
+            <low currency="USD">289242</low>
+            <high currency="USD">326564</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region id="15120" type="city" name="Havertown">
+            <zindexValue>285,000</zindexValue>
+            <links>
+              <overview>
+                http://www.zillow.com/local-info/PA-Havertown/r_15120/</overview>
+                <forSaleByOwner>http://www.zillow.com/havertown-pa/fsbo/</forSaleByOwner>
+                  <forSale>http://www.zillow.com/havertown-pa/</forSale>
+                </links>
+          </region>
+        </localRealEstate>
+      </result>
+    </results>
+  </response>
+</SearchResults:searchresults>
+<!-- H:003  T:25ms  S:869  R:Wed Sep 10 07:01:06 PDT 2014  B:4.0.3671-master.d70
+9ee0-LIVE-19dce00-20140908.190327.d709ee0c924d9b5cc9dbf8161c56175ecf564344.20140
+908122033398-origin/master -->

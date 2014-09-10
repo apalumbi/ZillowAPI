@@ -1,0 +1,77 @@
+﻿<SearchResults:searchresults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                             xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/6ec2563/static/xsd/SearchResults.xsd"
+                             xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
+  <request>
+    <address>527 Stanbridge Street</address>
+    <citystatezip>19401</citystatezip>
+  </request>
+  <message>
+    <text>Request successfully processed</text>
+    <code>0</code>
+  </message>
+  <response>
+    <results>
+      <result>
+        <zpid>9872758</zpid>
+        <links>
+          <homedetails>http://www.zillow.com/homedetails/527-Stanbridge-St-Norristown-PA-19401/9872758_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/527-Stanbridge-St-Norristown-PA-19401/9872758_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/9872758_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/9872758_zpid/</comparables>
+          </links>
+        <address>
+          <street>527 Stanbridge St</street>
+          <zipcode>19401</zipcode>
+          <city>Norristown</city>
+          <state>PA</state>
+          <latitude>40.121162</latitude>
+          <longitude>-75.354706</longitude>
+        </address>
+        <FIPScounty>42091</FIPScounty>
+        <useCode>SingleFamily</useCode>
+        <taxAssessmentYear>2014</taxAssessmentYear>
+        <taxAssessment>70210.0</taxAssessment>
+        <yearBuilt>1885</yearBuilt>
+        <lotSizeSqFt>3484</lotSizeSqFt>
+        <finishedSqFt>2064</finishedSqFt>
+        <bathrooms>3.0</bathrooms>
+        <bedrooms>4</bedrooms>
+        <totalRooms>7</totalRooms>
+        <lastSoldDate>10/12/2004</lastSoldDate>
+        <lastSoldPrice currency="USD">130000</lastSoldPrice>
+        <zestimate>
+          <amount currency="USD">152379</amount>
+          <last-updated>09/07/2014</last-updated>
+          <oneWeekChange deprecated="true"></oneWeekChange>
+          <valueChange duration="30" currency="USD">8950</valueChange>
+          <valuationRange>
+            <low currency="USD">144760</low>
+            <high currency="USD">159998</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <rentzestimate>
+          <amount currency="USD">1444</amount>
+          <last-updated>09/08/2014</last-updated>
+          <oneWeekChange deprecated="true"></oneWeekChange>
+          <valueChange duration="30" currency="USD">-19</valueChange>
+          <valuationRange>
+            <low currency="USD">1040</low>
+            <high currency="USD">1906</high>
+          </valuationRange>
+        </rentzestimate>
+        <localRealEstate>
+          <region id="40036" type="city" name="Norristown">
+            <zindexValue>120,400</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/PA-Norristown/r_40036/</overview>
+              <forSaleByOwner>http://www.zillow.com/norristown-pa/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/norristown-pa/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+    </results>
+  </response>
+</SearchResults:searchresults>
+<!-- H:003  T:23ms  S:1434  R:Wed Sep 10 08:11:50 PDT 2014  B:4.0.3671-master.d709ee0-LIVE-19dce00-20140908.190327.d709ee0c924d9b5cc9dbf8161c56175ecf564344.20140908122033398-origin/master -->
