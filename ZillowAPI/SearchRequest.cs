@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 
 namespace ZillowAPI {
-	public class DeepSearchRequest {
+	public class SearchRequest {
 		public string ZWSID { get; set; }
 		public string StreetAddress { get; set; }
 		public string Zip { get; set; }
+		public string Price { get; set; }
 	}
 }

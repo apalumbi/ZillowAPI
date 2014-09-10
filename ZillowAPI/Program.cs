@@ -14,15 +14,15 @@ namespace ZillowAPI {
 			var dataRetriever = new DataRetriever(new ZillowAPI());
 			var proFormaBuilder = new ProFormaBuilder();
 
-			var keepGoing = false;
-			while (!keepGoing) {
+			var keepGoing = true;
+			while (keepGoing) {
 				Console.WriteLine("Enter Street (i.e.  527 Stanbridge Street):");
 				var streetAddress = Uri.EscapeUriString(Console.ReadLine());
 
 				Console.WriteLine("Enter Zip:");
 				var zip = Uri.EscapeUriString(Console.ReadLine());
 
-				dataRetriever.GetData(streetAddress, zip);
+				Console.WriteLine(proFormaBuilder.Output(dataRetriever.GetData(streetAddress, zip)));
 
 				Console.WriteLine("Search Another (Y/N):");
 				var answer = Console.ReadLine();

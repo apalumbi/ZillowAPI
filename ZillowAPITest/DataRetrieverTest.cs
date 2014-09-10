@@ -13,15 +13,17 @@ namespace ZillowAPITest {
 	public class DataRetrieverTest {
 		
 		[Test]
-		public void GetFinishedSqFoot() {
-			var xml = XDocument.Load("DeepSearchResult.xml");
-			
+		public void GetDataPoints() {
 			var api = MockRepository.GenerateMock<IZillowAPI>();
-			api.Stub(a => a.GetDeepSearchResults(new DeepSearchRequest())).IgnoreArguments().Return(xml);
+			api.Stub(a => a.GetDeepSearchResults(null)).IgnoreArguments().Return(XDocument.Load("DeepSearchResult.xml"));
+			api.Stub(a => a.GetMonthlyPaymentResults(null)).IgnoreArguments().Return(XDocument.Load("MonthlyResult.xml"));
 			
 			var data = new DataRetriever(api).GetData("", "");
 			Assert.AreEqual("2064", data.SquareFootage);
 			Assert.AreEqual("1444", data.MonthlyRent);
+			Assert.AreEqual("57", data.MonthlyInsurance);
+			Assert.AreEqual("292", data.MonthlyTaxes);
+			Assert.AreEqual("152379", data.Zestimate);
 		}
 	}
 }
