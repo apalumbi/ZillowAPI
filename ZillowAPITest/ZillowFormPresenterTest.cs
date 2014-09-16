@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using ZillowForm;
+using ZillowAPI;
+using Rhino.Mocks;
+using System.Xml.Linq;
 
 namespace ZillowAPITest {
 	[TestFixture]
@@ -22,6 +25,20 @@ namespace ZillowAPITest {
 			Assert.IsFalse(presneter.IsAddressValid(empty));
 			Assert.IsFalse(presneter.IsAddressValid(noComma));
 			Assert.IsFalse(presneter.IsAddressValid(noZip));
+		}
+
+		[Test]
+		public void Search_UsesReturnedAddressToSave() {
+			var api = MockRepository.GenerateMock<IZillowAPI>();
+			var repo = MockRepository.GenerateMock<IRepository>();
+
+			api.Stub(a => a.GetDeepSearchResults(null)).IgnoreArguments().Return(XDocument.Load("DeepSearchResult.xml"));
+			api.Stub(a => a.GetMonthlyPaymentResults(null)).IgnoreArguments().Return(XDocument.Load("MonthlyResult.xml"));
+
+			var presenter = new ZillowFormPresenter(api, repo);
+
+			presenter.Search(new Address());
+			repo.AssertWasCalled(r => r.Save(Arg<Address>.Matches(a => a.ID == "9872758")));
 		}
 	}
 }

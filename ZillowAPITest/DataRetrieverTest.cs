@@ -24,6 +24,7 @@ namespace ZillowAPITest {
 			Assert.AreEqual("57", data.MonthlyInsurance);
 			Assert.AreEqual("292", data.MonthlyTaxes);
 			Assert.AreEqual("152379", data.Zestimate);
+			Assert.AreEqual("9872758", data.Address.ID);
 		}
 	}
 }

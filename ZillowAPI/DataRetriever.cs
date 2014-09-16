@@ -22,8 +22,13 @@ namespace ZillowAPI {
 			};
 
 			var searchDocument = api.GetDeepSearchResults(searchRequest);
-			
+
 			var data = new DataPoints {
+				Address = new Address { 
+					ID = GetID(searchDocument),
+					Street = address.Street,
+					Zip = address.Zip,
+				},
 				MonthlyRent = GetMonthlyRent(searchDocument),
 				SquareFootage = GetFinishedSqFoot(searchDocument),
 				Zestimate = GetZestimate(searchDocument),
@@ -41,6 +46,11 @@ namespace ZillowAPI {
 			data.MonthlyTaxes = GetMonthlyTaxes(monthlyDocument);
 			data.MonthlyInsurance = GetMonthlyInsurance(monthlyDocument);
 			return data;
+		}
+
+		private string GetID(XDocument doc) {
+			XElement root = doc.Root;
+			return root.Descendants("zpid").FirstOrDefault().Value;
 		}
 
 

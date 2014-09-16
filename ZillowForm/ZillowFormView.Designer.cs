@@ -25,7 +25,7 @@
 		private void InitializeComponent() {
 			this.streetComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.exampleLabel = new System.Windows.Forms.Label();
 			this.resultsBox = new System.Windows.Forms.TextBox();
 			this.searchButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
@@ -37,6 +37,7 @@
 			this.streetComboBox.Name = "streetComboBox";
 			this.streetComboBox.Size = new System.Drawing.Size(216, 21);
 			this.streetComboBox.TabIndex = 0;
+			this.streetComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.streetComboBox_KeyDown);
 			// 
 			// label1
 			// 
@@ -47,14 +48,14 @@
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Address:";
 			// 
-			// label2
+			// exampleLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(86, 19);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(141, 13);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "EG: 1418 Ashton Rd, 19083";
+			this.exampleLabel.AutoSize = true;
+			this.exampleLabel.Location = new System.Drawing.Point(86, 19);
+			this.exampleLabel.Name = "exampleLabel";
+			this.exampleLabel.Size = new System.Drawing.Size(141, 13);
+			this.exampleLabel.TabIndex = 3;
+			this.exampleLabel.Text = "EG: 1418 Ashton Rd, 19083";
 			// 
 			// resultsBox
 			// 
@@ -74,17 +75,17 @@
 			this.searchButton.UseVisualStyleBackColor = true;
 			this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
 			// 
-			// Form1
+			// ZillowFormView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(378, 309);
 			this.Controls.Add(this.searchButton);
 			this.Controls.Add(this.resultsBox);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.exampleLabel);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.streetComboBox);
-			this.Name = "Form1";
+			this.Name = "ZillowFormView";
 			this.Text = "Zillow Calc";
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -95,7 +96,7 @@
 
 		private System.Windows.Forms.ComboBox streetComboBox;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label exampleLabel;
 		private System.Windows.Forms.TextBox resultsBox;
 		private System.Windows.Forms.Button searchButton;
 	}

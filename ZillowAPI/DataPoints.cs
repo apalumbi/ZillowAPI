@@ -5,12 +5,13 @@ using System.Text;
 
 namespace ZillowAPI {
 	public class DataPoints {
-		public Address Adress { get; set; }
+		public Address Address { get; set; }
 		public string SquareFootage { get; set; }
 		public string MonthlyRent { get; set; }
 		public string Zestimate { get; set; }
 		public string MonthlyTaxes { get; set; }
 		public string MonthlyInsurance { get; set; }
+
 
 		public string RentPerSquareFoot {
 			get { return (int.Parse(SquareFootage) / int.Parse(MonthlyRent)).ToString(); }

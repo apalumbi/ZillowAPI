@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
-    <Compile Include="ctor.cs" />
+    <Compile Include="AddressRepository.cs" />
     <Compile Include="DataPoints.cs" />
     <Compile Include="DataRetriever.cs" />
     <Compile Include="SearchRequest.cs" />

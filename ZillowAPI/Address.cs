@@ -9,7 +9,7 @@ namespace ZillowAPI {
 		public string Street { get; set; }
 		public string Zip { get; set; }
 
-		public Address() {}
+		public Address() { }
 
 		public Address(string line) {
 
@@ -29,9 +29,11 @@ namespace ZillowAPI {
 		}
 
 		public string AddressString {
-			get {
-				return Street + ", " + Zip;
-			}
+			get { return Street + ", " + Zip; }
+		}
+
+		public string ToFileString {
+			get { return string.Format("{0}|{1}|{2}", Street, Zip, ID); }
 		}
 	}
 }

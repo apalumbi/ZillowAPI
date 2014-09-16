@@ -11,7 +11,6 @@ using ZillowAPI;
 
 namespace ZillowForm {
 	public partial class ZillowFormView : Form {
-		string addressFile = "Address.txt";
 		ZillowFormPresenter presenter;
 
 		public ZillowFormView() {
@@ -19,23 +18,34 @@ namespace ZillowForm {
 
 			presenter = new ZillowFormPresenter();
 
-			if (!File.Exists(addressFile)) {
-				File.Create(addressFile);
-			}
+			ReloadComboBox();
+		}
 
-			var adresses = File.ReadAllLines(addressFile).Select(l => new Address(l));
-			streetComboBox.Items.AddRange(adresses.Select(a => a.AddressString).ToArray());
-
+		private void ReloadComboBox() {
+			streetComboBox.Items.Clear();
+			streetComboBox.Items.AddRange(presenter.LoadAddresses());
 		}
 
 		private void searchButton_Click(object sender, EventArgs e) {
-			if (!presenter.IsAddressValid(streetComboBox.SelectedItem.ToString())) {
+			Search();
+		}
+
+		private void Search() {
+			exampleLabel.Visible = false;
+			if (!presenter.IsAddressValid(streetComboBox.Text)) {
 				MessageBox.Show("Please enter a valid Address");
 			}
 			else {
-				resultsBox.Text = presenter.Search(new Address(streetComboBox.SelectedItem.ToString()));
+				resultsBox.Text = presenter.Search(new Address(streetComboBox.Text));
 			}
+			ReloadComboBox();
+			streetComboBox.Select(0, streetComboBox.Text.Length);
 		}
 
+		void streetComboBox_KeyDown(object sender, KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter) {
+				Search();
+			}
+		}
 	}
 }

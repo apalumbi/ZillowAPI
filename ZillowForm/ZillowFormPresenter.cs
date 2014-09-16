@@ -4,13 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using ZillowAPI;
+using System.IO;
 
 namespace ZillowForm {
 	public class ZillowFormPresenter {
 		DataRetriever retriever;
+		IRepository repository;
 
-		public ZillowFormPresenter() {
-			retriever = new DataRetriever(new ZillowAPI.ZillowAPI());
+		public ZillowFormPresenter() : this(new ZillowAPI.ZillowAPI(), new AddressRepository()) {}
+
+		public ZillowFormPresenter(IZillowAPI api, IRepository repository) {
+			retriever = new DataRetriever(api);
+			this.repository = repository;
 		}
 
 		public bool	IsAddressValid(string address) {
@@ -30,7 +35,12 @@ namespace ZillowForm {
 
 		public string Search(Address address) {
 			var data = retriever.GetData(address);
+			repository.Save(data.Address);
 			return new ProFormaBuilder().Output(data);
+		}
+		
+		public string[] LoadAddresses() {
+			return repository.FindAll().Select(a => a.AddressString).ToArray();
 		}
 	}
 }
