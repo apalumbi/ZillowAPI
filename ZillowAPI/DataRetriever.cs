@@ -14,11 +14,11 @@ namespace ZillowAPI {
 			this.api = api;
 		}
 
-		public DataPoints GetData(string streetAddress, string zip) {
+		public DataPoints GetData(Address address) {
 			var searchRequest = new SearchRequest {
 				ZWSID = ZWSID,
-				StreetAddress = streetAddress,
-				Zip = zip,
+				StreetAddress = address.Street,
+				Zip = address.Zip,
 			};
 
 			var searchDocument = api.GetDeepSearchResults(searchRequest);
@@ -31,8 +31,8 @@ namespace ZillowAPI {
 
 			var monthlyRequest = new SearchRequest {
 				ZWSID = ZWSID,
-				StreetAddress = streetAddress,
-				Zip = zip,
+				StreetAddress = address.Street,
+				Zip = address.Zip,
 				Price = data.Zestimate,
 			};
 

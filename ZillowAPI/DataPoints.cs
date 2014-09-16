@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ZillowAPI {
 	public class DataPoints {
+		public Address Adress { get; set; }
 		public string SquareFootage { get; set; }
 		public string MonthlyRent { get; set; }
 		public string Zestimate { get; set; }

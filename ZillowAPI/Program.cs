@@ -22,7 +22,7 @@ namespace ZillowAPI {
 				Console.WriteLine("Enter Zip:");
 				var zip = Uri.EscapeUriString(Console.ReadLine());
 
-				Console.WriteLine(proFormaBuilder.Output(dataRetriever.GetData(streetAddress, zip)));
+				Console.WriteLine(proFormaBuilder.Output(dataRetriever.GetData(new Address { Zip = zip, Street = streetAddress })));
 
 				Console.WriteLine("Search Another (Y/N):");
 				var answer = Console.ReadLine();

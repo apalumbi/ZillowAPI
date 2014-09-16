@@ -1,4 +1,5 @@
 ﻿Address at the top
 Mortgage Calc
 Map?
-UI?
+UI
+  - config for files.

@@ -18,7 +18,7 @@ namespace ZillowAPITest {
 			api.Stub(a => a.GetDeepSearchResults(null)).IgnoreArguments().Return(XDocument.Load("DeepSearchResult.xml"));
 			api.Stub(a => a.GetMonthlyPaymentResults(null)).IgnoreArguments().Return(XDocument.Load("MonthlyResult.xml"));
 			
-			var data = new DataRetriever(api).GetData("", "");
+			var data = new DataRetriever(api).GetData(new Address());
 			Assert.AreEqual("2064", data.SquareFootage);
 			Assert.AreEqual("1444", data.MonthlyRent);
 			Assert.AreEqual("57", data.MonthlyInsurance);
